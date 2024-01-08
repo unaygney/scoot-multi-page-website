@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "./images/logo.svg";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
@@ -8,6 +8,15 @@ import Button from "../Button";
 import clsx from "clsx";
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [isOpen]);
+
   return (
     <header className="w-full h-16">
       <div className="w-full h-full flex items-center gap-[78px] px-8  ">
