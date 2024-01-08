@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./containers/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -10,10 +11,10 @@ module.exports = {
       colors: {
         yellow: "#FCB72B",
         "dark-navy": "#495567",
-        "dim-grey": "#FCB72B",
-        "light-grey": "#FCB72B",
-        snow: "#FCB72B",
-        "light-yellow": "#FCB72B",
+        "dim-grey": "#939CAA",
+        "light-grey": "#e5ecf4",
+        snow: "#f2f5f9",
+        "light-yellow": "#fff4df",
       },
     },
   },

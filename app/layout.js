@@ -1,5 +1,6 @@
 import "./globals.css";
 import { spaceMono, lexendDeca } from "@/lib/font";
+import Navbar from "@/components/Navbar";
 
 export default function RootLayout({ children }) {
   return (
@@ -7,7 +8,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${spaceMono.className} ${lexendDeca.className} antialiased scroll-smooth`}
     >
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
