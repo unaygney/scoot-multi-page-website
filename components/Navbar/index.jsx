@@ -18,8 +18,8 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="w-full h-16">
-      <div className="w-full h-full flex items-center gap-[78px] px-8  ">
+    <header className="w-full h-16 md:h-24">
+      <div className="w-full h-full container mx-auto  flex items-center gap-[78px] px-8 md:justify-between  ">
         <div className="md:hidden">
           <Hamburger
             size={20}
@@ -29,39 +29,56 @@ function Navbar() {
           />
         </div>
 
-        <Link className="" href={"/"}>
+        <Link href={"/"}>
           <Logo />
         </Link>
-      </div>
 
-      {/* Mobile Bar */}
-      <div
-        className={clsx(
-          "fixed top-16 bottom-0 left-0  right-0 z-10  text-light-grey flex md:hidden "
-        )}
-      >
         <div
           className={clsx(
-            "h-full flex flex-col  bg-[#333A44] overflow-hidden transition-all ",
-            { "w-[75%] py-6 px-8": isOpen },
-            { "w-0": !isOpen }
+            "fixed top-16 bottom-0 left-0  right-0 z-10  text-light-grey flex md:hidden "
           )}
         >
-          <nav className="flex flex-col gap-6 mt-10">
+          <div
+            className={clsx(
+              "h-full flex flex-col  bg-[#333A44] overflow-hidden transition-all ",
+              { "w-[75%] py-6 px-8": isOpen },
+              { "w-0": !isOpen }
+            )}
+          >
+            <nav className="flex flex-col gap-6 mt-10">
+              {LINKS.map((link) => (
+                <Link className="link" href={link.path} key={link.id}>
+                  {link.title}
+                </Link>
+              ))}
+            </nav>
+
+            <Button className="mt-auto" title="Get Scootin" type="button " />
+          </div>
+          {/* Overlay */}
+          <div
+            className={clsx("bg-black opacity-50  ", { "flex-1 ": isOpen })}
+          ></div>
+        </div>
+
+        {/* Desktop Bar */}
+        <div className="hidden md:flex justify-between flex-1 ">
+          <nav className="flex items-center gap-8 ">
             {LINKS.map((link) => (
-              <Link className="link" href={link.path} key={link.id}>
+              <Link
+                className="link text-dim-grey text-[15px]"
+                href={link.path}
+                key={link.id}
+              >
                 {link.title}
               </Link>
             ))}
           </nav>
-
-          <Button className="mt-auto" title="Get Scootin" type="button " />
+          <Button title="Get Scootin" type="button" />
         </div>
-        {/* Overlay */}
-        <div
-          className={clsx("bg-black opacity-50  ", { "flex-1 ": isOpen })}
-        ></div>
       </div>
+
+      {/* Mobile Bar */}
     </header>
   );
 }
