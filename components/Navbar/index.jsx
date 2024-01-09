@@ -32,10 +32,10 @@ function Navbar() {
         <Link href={"/"}>
           <Logo />
         </Link>
-
+        {/* Mobile Bar */}
         <div
           className={clsx(
-            "fixed top-16 bottom-0 left-0  right-0 z-10  text-light-grey flex md:hidden "
+            "fixed top-16 bottom-0 left-0  right-0   text-light-grey flex md:hidden z-50 "
           )}
         >
           <div
@@ -77,8 +77,6 @@ function Navbar() {
           <Button title="Get Scootin" type="button" />
         </div>
       </div>
-
-      {/* Mobile Bar */}
     </header>
   );
 }
