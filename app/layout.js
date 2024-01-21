@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${spaceMono.className} ${lexendDeca.className} antialiased scroll-smooth`}
     >
-      <body>
+      <body className="">
         <Navbar />
         {children}
       </body>
