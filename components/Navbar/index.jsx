@@ -57,6 +57,7 @@ function Navbar() {
           </div>
           {/* Overlay */}
           <div
+            onClick={() => setOpen(false)}
             className={clsx("bg-black opacity-50  ", { "flex-1 ": isOpen })}
           ></div>
         </div>
