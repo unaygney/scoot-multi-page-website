@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "right-arrow": "url(/right-arrow.svg)",
+      },
       colors: {
         yellow: "#FCB72B",
         "dark-navy": "#495567",
